@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    <h:head>
+        <title>Events To Go</title>       
+        <style>    
+            h1{color:darkmagenta}
+            h2{color:white}
+            p{color:darkturquoise}
+            div{color:darkturquoise}
+        </style>
+        <link href='http://fonts.googleapis.com/css?family=Quicksand|Amatic+SC' rel='stylesheet' type='text/css'/>
+    </h:head>
+    
+    <h:body>
+        
+        <div style="background-image: url(https://farm4.staticflickr.com/3134/3230729118_929545e3be_o.jpg);background-repeat: no-repeat;background-size: cover;width:1500px;height:674px" align="center">
+            <h1><font size="16">Yaddle</font></h1>
+       
+            <h2><font size="8" face="gothic">What Do You Like?</font></h2>
+        
+            
+            <font size="5">
+                <h:panelGrid columns="1" cellpadding="5">
+                    <p:inputText style="width:500px" />
+                    <p:inputText style="width:500px" />
+                    <p:inputText style="width:500px" />
+                </h:panelGrid>
+            <p:commandButton value="Submit" />
+                
+            </font>
+        </div>
+    
+    </h:body>
+</html>
