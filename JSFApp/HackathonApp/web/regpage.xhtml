@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    <h:head>
+        <title>Events To Go</title>       
+        <style>
+            body{background-color:white}
+            h1{color:darkturquoise}
+            p{color:darkturquoise}
+            div{color:darkturquoise}
+        </style>
+    </h:head>
+    <h:body>
+        
+    
+         
+    <h1 align="center">
+        <font size="10">Event Registration</font>
+    </h1>
+        
+    <p align="center"><font size="5"><i>The more events you post, the more points you get!</i></font></p>
+    
+    <p align="center"><font size="5">Please fill in event information.</font></p>
+    
+    <div align="center"><font size="3">
+    <h:form>          
+    <h:panelGrid columns="1" cellpadding="5">
+        <h:outputText value="Event Name: " />
+        <p:inputText id="eventname" style="width:350px"  />
+        <p:watermark for="eventname" value="Lehman Hackathon 2014" id="watermark1" />
+        
+        <h:outputText value="Event Organizer(s): " />
+        <p:inputText id="eventorg" style="width:350px"  />        
+        <p:watermark for="eventorg" value="Goldman Sachs, Lehman College" id="watermark2" />
+        
+        <h:outputText value="Event Location: " />
+        <p:inputText id="eventloc" style="width:350px"  />
+        <p:watermark for="eventloc" value="250 Bedford Park Boulevard West" id="watermark3" />
+        
+        <h:outputText value="Event Date: " />
+        <p:inputText id="eventdate" style="width:350px" />
+        <p:watermark for="eventdate" value="November 15, 2014" id="watermark4" />
+        
+        <h:outputText value="Event Time: " />
+        <p:inputText id="eventtime" style="width:350px"  />
+        <p:watermark for="eventtime" value="6:00PM" id="watermark5" />
+        
+        <h:outputText value="Event Cost: " />
+        <p:inputText id="eventcost" style="width:350px"  />
+        <p:watermark for="eventcost" value="Free" id="watermark6" />
+        
+        <h:outputText value="Event Information: " />
+        <p:inputText id="eventinfo" style="width:350px;height:200px"  />
+        <p:watermark for="eventinfo" value="Programming competition" id="watermark7" />
+        
+        <h:outputText value="Tags: " />
+        <p:inputText id="eventtags" style="width:350px"  />
+        <p:watermark for="eventtags" value="hackathon,programming,2014" id="watermark8" />
+        
+    </h:panelGrid>
+ 
+    <p:commandButton value="Submit" />
+    
+    <p:commandButton value="Return" action="index?faces-redirect=true" ajax="false"/>
+    </h:form>
+    </font></div>
+    
+    </h:body>
+</html>

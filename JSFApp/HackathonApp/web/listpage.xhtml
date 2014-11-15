@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    
+    
+    <h:head>
+        <title>Exciting Events</title>
+    </h:head>
+    
+  
+
+        <h:body>
+            
+            <h1 align="center" style="color:DarkTurquoise">
+            <font size="10">Events To Go!</font>
+        </h1>
+        
+            <div align="center">
+            <h:form> 
+                <p:dataScroller value="sam" var="car" chunkSize="10" >
+        <f:facet name="header" >
+            Hackathon
+        </f:facet>
+ 
+        <f:facet name="loader">
+            <p:commandButton value="More Info" icon="ui-icon-circle-triangle-s" action="#{dfView.showMessage}" />
+        </f:facet>
+ 
+        <h:panelGrid columns="2" columnClasses="logo,detail" >
+            <p:graphicImage value="images/lehman-logo.png" height="40" /> 
+ 
+            <p:outputPanel>
+                <h:panelGrid columns="4"  cellpadding="5">
+                    <h:outputText value="Date:" />
+                    <h:outputText value="November 12, 2014" style="font-weight: bold"/>
+                    <h:outputText value="Time:" />
+                    <h:outputText value="6:00PM" style="font-weight: bold"/>
+                    <h:outputText value="Cost:" />
+                    <h:outputText value="Free" style="font-weight: bold"/>
+ 
+                    <h:outputText value="Tags:" />
+                    <h:outputText value="Engineering,Technology, Programming " style="font-weight: bold"/>
+ 
+                    <p:commandButton value="Text Me"/>
+                    <p:commandButton value="Share" icon="ui-icon-star"/>
+                </h:panelGrid>
+                
+                
+            </p:outputPanel>
+            
+            
+        </h:panelGrid>
+    </p:dataScroller>
+                
+                <p:dataScroller value="sam" var="car" chunkSize="10" style="margin-bottom:10px" >
+        <f:facet name="header" >
+            Events For You
+        </f:facet>
+ 
+        <f:facet name="loader">
+            <p:commandButton type="button" value="More" icon="ui-icon-circle-triangle-s"/>
+        </f:facet>
+ 
+                    <h:panelGrid columns="4" columnClasses="logo,detail" width="10"  >
+            <p:graphicImage value="lehman-logo.png" /> 
+ 
+            <p:outputPanel>
+                <h:panelGrid columns="4" style="width:50px" cellpadding="5">
+                    <h:outputText value="Id:" />
+                    <h:outputText value="1" style="font-weight: bold"/>
+                    <h:outputText value="Id:" />
+                    <h:outputText value="1" style="font-weight: bold"/>
+                    <h:outputText value="Id:" />
+                    <h:outputText value="1" style="font-weight: bold"/>
+ 
+                    <h:outputText value="Year:" />
+                    <h:outputText value="1989" style="font-weight: bold"/>
+ 
+                    <h:outputText value="Color:" />
+                    <h:outputText value="1989" style="font-weight: bold"/>
+                </h:panelGrid>
+                
+                
+            </p:outputPanel>
+            
+            
+        </h:panelGrid>
+    </p:dataScroller>
+                
+                
+</h:form>
+                
+                </div>
+    </h:body>
+</html>
+

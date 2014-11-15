@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Events To Go</title>       
+    </h:head>
+    <h:body>
+       
+        <h1 align="center" style="color:DarkTurquoise">
+            <font size="10">Events To Go!</font>
+        </h1>
+        
+        <div align="center">
+        
+        <p> Are you a....</p>
+            
+        <h:form>
+ 
+        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+
+                  <p:commandButton action="listpage?faces-redirect=true" value="College Student" ajax="false"/>
+                  <p:commandButton action="regpage?faces-redirect=true" value="Event Organizer" ajax="false"/>
+        </h:panelGrid>
+ 
+      
+ 
+        </h:form> 
+        </div>
+            
+    </h:body>
+</html>
