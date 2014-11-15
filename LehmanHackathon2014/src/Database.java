@@ -104,7 +104,7 @@ public class Database {
 		
 	}
 	
-	public static ArrayList<String> getTags(String event) {
+	public static ArrayList<String> getTags(String event) { //not currently working
 		
 
 		

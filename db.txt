@@ -1,0 +1,5 @@
+Winter Wonderland		Lehman College		6:00 PM		Technology		Engineering	Design		0.0	Team challenge to implement technology and design
+Resume Workshop			Baruch College		1:00 PM		Career Development	(null)		(null)		0.0	Carreer development service offered monthly for students
+Hackathon			Lehman College		6:00 PM		Technology		Engineering	Design		0.0	Team challenge to implement technology and design
+Day of the Dead Dinner		City College		5:00 PM		Fun			Culture		Food		10.0	Come learn about a fun Mexican Holiday
+Charity Race			Lehman College		9:00 AM		Health			Charity		Wellness	30.0	Money raised from this race will go toward ending human trafficking
