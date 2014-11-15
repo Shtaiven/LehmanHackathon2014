@@ -50,71 +50,23 @@ public class Database {
 	
 	public static String getLocation(String event) {
 		
+		
 		try {
 			
-			Connection connection = getConnection();
+			ArrayList<String> location = new ArrayList<String>();
+			Connection connection = getConnection();				
 			String selectStatement = "select LOCATION from EVENTS where EVENTNAME='"+ event +"'";
 			Statement sqlStatement = connection.createStatement();
 			ResultSet resultSet = sqlStatement.executeQuery(selectStatement);
-			String location = null;
-			
-			while (resultSet.next()) {
 				
-				location = resultSet.getString(2);
-				
+			while(resultSet.next()) {
+						 
+				location.add(resultSet.getString(1));
+						
 			}
-			
-			return location;
-			
-		} catch (SQLException e) {
-			
-			System.out.println(e.getStackTrace());
-			
-		}	
-		
-		return null;	
-		
-	}
-	
-	public static String getTime(String event) {
-		
-		try {
-			
-			Connection connection = getConnection();
-			String selectStatement = "select EVENTTIME from EVENTS where EVENTNAME='"+ event +"'";
-			Statement sqlStatement = connection.createStatement();
-			ResultSet resultSet = sqlStatement.executeQuery(selectStatement);
-			
-			return resultSet.getString(3);
-			
-		} catch (SQLException e) {
-			
-			System.out.println(e.getStackTrace());
-			
-		}	
-		
-		return null;	
-		
-	}
-	
-	public static ArrayList<String> getTags(String event) {
-		
-		try {
-			
-			Connection connection = getConnection();
-			ArrayList<String> tags = new ArrayList<String>(3);
-			
-			for (Integer i = 1; i <=3; i++) {
 				
-				String selectStatement = "select EVENTNAME from EVENTS where TAG" + i.toString() +"=";
-				Statement sqlStatement = connection.createStatement();
-				ResultSet resultSet = sqlStatement.executeQuery(selectStatement);
-				tags.add(resultSet.getString(3+i));
-				
-			}
-			
-			return tags;
-			
+		return location.get(0);
+		
 		} catch (SQLException e) {
 			
 			System.out.println(e.getStackTrace());
@@ -122,6 +74,67 @@ public class Database {
 		}	
 		
 		return null;
+	}
+	
+	public static String getTime(String event) {
+		
+		try {
+			
+			ArrayList<String> time = new ArrayList<String>();
+			Connection connection = getConnection();				
+			String selectStatement = "select EVENTTIME from EVENTS where EVENTNAME='"+ event +"'";
+			Statement sqlStatement = connection.createStatement();
+			ResultSet resultSet = sqlStatement.executeQuery(selectStatement);
+				
+			while(resultSet.next()) {
+						 
+				time.add(resultSet.getString(1));
+						
+			}
+				
+		return time.get(0);
+		
+		} catch (SQLException e) {
+			
+			System.out.println(e.getStackTrace());
+			
+		}	
+		
+		return null;
+		
+	}
+	
+	public static ArrayList<String> getTags(String event) {
+		
+
+		
+		try {
+			
+			ArrayList<String> tags = new ArrayList<String>();
+			Connection connection = getConnection();
+			for (Integer i = 1; i <=3;) {
+				String selectStatement = "select TAG"+ i.toString() + " from EVENTS where EVENTNAME='"+ event +"'";
+				Statement sqlStatement = connection.createStatement();
+				ResultSet resultSet = sqlStatement.executeQuery(selectStatement);
+				
+				while(resultSet.next()) {
+						 
+					tags.add(resultSet.getString(3));
+						
+				}
+				i++;
+			}
+				
+		return tags;
+		
+		} catch (SQLException e) {
+			
+			System.out.println(e.getStackTrace());
+			
+		}	
+		
+		return null;
+
 		
 	}
 	
@@ -129,16 +142,21 @@ public class Database {
 		
 		try {
 			
-			Connection connection = getConnection();
+			ArrayList<Double> cost = new ArrayList<Double>();
+			Connection connection = getConnection();				
 			String selectStatement = "select COST from EVENTS where EVENTNAME='"+ event +"'";
 			Statement sqlStatement = connection.createStatement();
 			ResultSet resultSet = sqlStatement.executeQuery(selectStatement);
+				
+			while(resultSet.next()) {
+						 
+				cost.add(resultSet.getDouble(1));
+						
+			}
 			
-			Double cost = resultSet.getDouble(7);
-			String costString = "$" + cost.toString();
-			
-			return costString;
-			
+			String costString = "$" + cost.get(0);
+		return costString;
+		
 		} catch (SQLException e) {
 			
 			System.out.println(e.getStackTrace());
@@ -146,6 +164,7 @@ public class Database {
 		}	
 		
 		return null;
+
 		
 	}
 	
@@ -153,13 +172,20 @@ public class Database {
 		
 		try {
 			
-			Connection connection = getConnection();
+			ArrayList<String> info = new ArrayList<String>();
+			Connection connection = getConnection();				
 			String selectStatement = "select INFO from EVENTS where EVENTNAME='"+ event +"'";
 			Statement sqlStatement = connection.createStatement();
 			ResultSet resultSet = sqlStatement.executeQuery(selectStatement);
-			
-			return resultSet.getString(8);
-			
+				
+			while(resultSet.next()) {
+						 
+				info.add(resultSet.getString(1));
+						
+			}
+				
+		return info.get(0);
+		
 		} catch (SQLException e) {
 			
 			System.out.println(e.getStackTrace());
@@ -167,6 +193,7 @@ public class Database {
 		}	
 		
 		return null;
+
 		
 	}
 	
