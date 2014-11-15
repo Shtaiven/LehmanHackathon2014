@@ -8,7 +8,12 @@ import java.sql.Statement;
 
 public class Database {
 	
-	public static ArrayList<String> tagSearch(ArrayList<String> tags, Integer index) {
+	public static ArrayList<String> getEvents(ArrayList<String> tags) {
+		
+		/**
+		 * returns an ArrayList of event names from the database which contain the tags specified in the 
+		 * tags parameter.
+		 */
 	
 		try {
 		ArrayList<String> events = new ArrayList<String>();
@@ -18,16 +23,14 @@ public class Database {
 			for (Integer i = 1; i <= 3; i++){
 				for (String tag : tags) {
 				
-					String selectStatement = "select EVENTNAME from EVENTS where TAG" + index.toString() +"=";
+					String selectStatement = "select EVENTNAME from EVENTS where TAG" + i.toString() +"=";
 					Statement sqlStatement = connection.createStatement();
 					ResultSet resultSet = sqlStatement.executeQuery(selectStatement + "'" + tag + "'");
 				
 					while(resultSet.next()) {
-						
-//						for (String event: events) {
-					
-//						}
-						events.add(resultSet.getString(1));
+						if(searchList(events, resultSet.getString(1)) == false) {
+								events.add(resultSet.getString(1));
+						}
 					}
 				}
 			}
@@ -44,6 +47,7 @@ public class Database {
 		return events;
 	}
 	
+	
 	private static Connection getConnection() {
 		Connection connection = null;
 		try {
@@ -56,6 +60,14 @@ public class Database {
 		return connection;
 	}
 	
-
+	private static Boolean searchList(ArrayList<String> list, String item) {
+		
+		for (String i : list) {
+			if (i == item) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 }
