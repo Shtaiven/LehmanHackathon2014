@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    
+    <h:head>
+        <title>Events To Go</title>       
+    </h:head>
+    <h:body>
+       
+        <h1 align="center" style="color:DarkTurquoise">
+            <font size="10">Events To Go!</font>
+        </h1>
+        
+        <div align="center">
+        
+        <p>Are you an college/organization or student? Check one.</p>
+            
+        <h:form>
+            <p:growl id="msg" />
+ 
+        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+            <h:outputText value="College/Organization: " />
+            <p:selectBooleanCheckbox value="#{selectBooleanView.value1}" />
+                            
+            <h:outputText value="Student: " />
+            <p:selectBooleanCheckbox value="#{selectBooleanView.value2}">
+                <p:ajax update="msg" listener="#{selectBooleanView.addMessage}" />
+            </p:selectBooleanCheckbox>
+        </h:panelGrid>
+ 
+        <p:commandButton value="Submit" icon="ui-icon-check" update="msg" oncomplete="PF('dlg').show()" />
+ 
+        </h:form> 
+        </div>
+            
+    </h:body>
+</html>
+
